@@ -29,16 +29,14 @@ const PlatinumPoolsLogo = () => (
 
 const clients: Client[] = [
   {
-    name: "Krishali",
-    company: "Rosehafeet",
-    testimonial: "Our partnership with Rosehafeet has been incredible. The quality of service and attention to detail is unmatched.",
-    logo: <KrishaliLogo />
+    name: "Krishali Website",
+    company: "Krishali",
+    testimonial: "Our partnership with Krishali has been incredible. The quality of service and attention to detail is unmatched.",
   },
   {
     name: "Platinum Pools UAE",
     company: "Platinumpoolsuae",
-    testimonial: "Working with Rosehafeet has elevated our pool services. Their expertise and professionalism are truly commendable.",
-    logo: <PlatinumPoolsLogo />
+    testimonial: "Working with Platinum has elevated our pool services. Their expertise and professionalism are truly commendable.",
   }
 ]
 
