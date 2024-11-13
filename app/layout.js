@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Logo from "@/components/ui/logo";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -13,16 +14,18 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Krishali Group",
+  title: "Touana",
   description: "Bespoke IT solutions",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
+
         {children}
       </body>
     </html>
