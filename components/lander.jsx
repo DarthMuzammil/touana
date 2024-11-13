@@ -19,7 +19,7 @@ export function BlockPage() {
 
   return (
     (<div className="min-h-screen bg-[#f3f0e8] font-serif">
-      {/* Header */}
+      {/* Header */   }
       <header className="bg-[#0c3c2d] text-[#e1d9c6] py-4 fixed w-full z-50">
         <div className="container mx-auto px-4">
           <div className="flex  items-center  justify-evenly">
