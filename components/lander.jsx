@@ -157,7 +157,7 @@ export function BlockPage() {
             Elevate Your IT Infrastructure
           </h2>
           <p className="text-xl text-[#0c3c2d] mb-12 max-w-2xl mx-auto">
-            Experience the pinnacle of technological excellence with Krishali's bespoke IT solutions.
+            Experience the pinnacle of technological excellence with Touana.
           </p>
         
         </div>
