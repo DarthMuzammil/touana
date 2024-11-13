@@ -7,17 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
-  ChevronRight,
-  Server,
-  Shield,
-  BarChart,
-  Cloud,
-  Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { services, reviews, teamMembers } from "@/lib/constants";
-import TeamCarousel from "./TeamCarousel";
 import ClientCarousel from "./clientCarousel";
 
 export function BlockPage() {
@@ -189,8 +182,6 @@ export function BlockPage() {
       </section> */}
       {/* our clients */}
       <ClientCarousel />
-      {/* Team Section */}
-      <TeamCarousel team={teamMembers} />
       {/* CTA Section */}
       <section className="py-24 bg-[#f3f0e8]">
         <div className="container mx-auto px-4 text-center">
