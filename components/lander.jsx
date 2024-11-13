@@ -27,7 +27,7 @@ export function BlockPage() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="min-h-screen bg-[#f3f0e8] font-serif">
+    <div className="min-h-screen   bg-[#f3f0e8] font-serif">
       {/* Header */}
       <header className="bg-[#0c3c2d] text-[#e1d9c6] py-4 fixed w-full z-50">
         <div className="container mx-auto px-4">
