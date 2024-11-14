@@ -1,73 +1,93 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from "react"
-import useEmblaCarousel from "embla-carousel-react"
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
+import React from "react";
 
 interface Client {
-  name: string
-  company: string
-  testimonial: string
-  logo: React.ReactNode
+  name: string;
+  company: string;
+  testimonial: string;
+  logo: React.ReactNode;
 }
 
 const KrishaliLogo = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full">
     <circle cx="50" cy="50" r="45" fill="#F5EFE7" />
-    <text x="50" y="50" fontFamily="Arial" fontSize="40" fill="#1B352B" textAnchor="middle" dominantBaseline="central">K</text>
+    <text
+      x="50"
+      y="50"
+      fontFamily="Arial"
+      fontSize="40"
+      fill="#1B352B"
+      textAnchor="middle"
+      dominantBaseline="central"
+    >
+      K
+    </text>
   </svg>
-)
+);
 
 const PlatinumPoolsLogo = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full">
     <rect width="100" height="100" fill="#F5EFE7" />
-    <path d="M20 80 Q50 20 80 80" stroke="#1B352B" strokeWidth="8" fill="none" />
+    <path
+      d="M20 80 Q50 20 80 80"
+      stroke="#1B352B"
+      strokeWidth="8"
+      fill="none"
+    />
     <circle cx="50" cy="50" r="10" fill="#1B352B" />
   </svg>
-)
+);
 
-const clients: Client[] = [
+const clients: any = [
   {
     name: "Krishali Website",
     company: "Krishali",
-    testimonial: "Our partnership with Krishali has been incredible. The quality of service and attention to detail is unmatched.",
+    testimonial:
+      "Our partnership with Krishali has been incredible. The quality of service and attention to detail is unmatched.",
+    url: "https://www.krishaligroup.com",
   },
   {
     name: "Platinum Pools UAE",
     company: "Platinumpoolsuae",
-    testimonial: "Working with Platinum has elevated our pool services. Their expertise and professionalism are truly commendable.",
-  }
-]
+    testimonial:
+      "Working with Platinum has elevated our pool services. Their expertise and professionalism are truly commendable.",
+      url : "http://platinumpoolsuae.com/"
+  },
+];
 
 export default function ClientCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     loop: true,
     dragFree: true,
-  })
+  });
 
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const scrollPrev = () => emblaApi?.scrollPrev()
-  const scrollNext = () => emblaApi?.scrollNext()
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
 
     const onSelect = () => {
-      setPrevBtnEnabled(emblaApi.canScrollPrev())
-      setNextBtnEnabled(emblaApi.canScrollNext())
-    }
+      setPrevBtnEnabled(emblaApi.canScrollPrev());
+      setNextBtnEnabled(emblaApi.canScrollNext());
+    };
 
-    emblaApi.on("select", onSelect)
-    onSelect()
+    emblaApi.on("select", onSelect);
+    onSelect();
 
     return () => {
-      emblaApi.off("select", onSelect)
-    }
-  }, [emblaApi])
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <section className="bg-primary py-24 relative border-t-4 border-b-4 border-secondary overflow-hidden">
@@ -105,13 +125,15 @@ export default function ClientCarousel() {
                     <div className="relative">
                       <Quote className="absolute top-0 left-0 text-white/20 w-12 h-12 -translate-x-1/2 -translate-y-1/2" />
                       <p className="text-gray-100 text-lg italic leading-relaxed pl-6">
-                        "{client.testimonial}"
+                        "<a href={client?.url} target="_blank" rel="noopener noreferrer" className="underline text-primary hover:text-secondary">
+                          {client.testimonial}
+                        </a>"
                       </p>
                     </div>
                   </div>
                 </div>
               ))}
-            </div>
+              </div>
           </div>
 
           <button
@@ -140,5 +162,5 @@ export default function ClientCarousel() {
         </div>
       </div>
     </section>
-  )
+  );
 }
